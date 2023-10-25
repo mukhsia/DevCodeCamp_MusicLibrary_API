@@ -18,36 +18,39 @@ namespace SongsWebAPI.Controllers
             _context.SaveChanges();
         }
 
-        // GET: api/Songs
+        // GET All: api/Songs
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public IActionResult Get()
+        { 
+            return Forbid();
         }
 
-        // GET api/Songs/5
+        // GET By Id: api/Songs/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Forbid();
         }
 
         // POST api/Songs
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] string value)
         {
+            return Forbid();
         }
 
         // PUT api/Songs/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] string value)
         {
+            return Forbid();
         }
 
         // DELETE api/Songs/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            return Forbid();
         }
     }
 }
