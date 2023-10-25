@@ -15,35 +15,36 @@ namespace SongsWebAPI.Controllers
         public SongsController(ApplicationDbContext context)
         {
             _context = context;
+            _context.SaveChanges();
         }
 
-        // GET: api/<SongsController>
+        // GET: api/Songs
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<SongsController>/5
+        // GET api/Songs/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<SongsController>
+        // POST api/Songs
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<SongsController>/5
+        // PUT api/Songs/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<SongsController>/5
+        // DELETE api/Songs/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
