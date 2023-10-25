@@ -21,8 +21,8 @@ namespace SongsWebAPI.Controllers
         // GET All: api/Songs
         [HttpGet]
         public IActionResult Get()
-        { 
-            return Forbid();
+        {
+            return Ok(_context.Songs);
         }
 
         // GET By Id: api/Songs/5
