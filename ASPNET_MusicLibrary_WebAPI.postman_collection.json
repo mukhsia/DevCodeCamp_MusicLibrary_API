@@ -10,7 +10,19 @@
 			"name": "Get All",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7215/api/Songs",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7215",
+					"path": [
+						"api",
+						"Songs"
+					]
+				}
 			},
 			"response": []
 		},
@@ -18,7 +30,20 @@
 			"name": "Get By Id",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7215/api/Songs/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7215",
+					"path": [
+						"api",
+						"Songs",
+						"11"
+					]
+				}
 			},
 			"response": []
 		},
@@ -87,7 +112,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:7215/api/Songs/9",
+					"raw": "https://localhost:7215/api/Songs/11",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -96,7 +121,29 @@
 					"path": [
 						"api",
 						"Songs",
-						"9"
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put (Like)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7215/api/Songs/Like/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7215",
+					"path": [
+						"api",
+						"Songs",
+						"Like",
+						"1"
 					]
 				}
 			},

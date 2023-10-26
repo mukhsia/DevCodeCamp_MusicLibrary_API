@@ -92,5 +92,24 @@ namespace SongsWebAPI.Controllers
                 return NotFound();
             }
         }
+
+        // Bonus User Story
+        // PUT api/Songs/Like/5
+        [HttpPut("Like/{id}")]
+        public IActionResult Put(int id)
+        {
+            var mySong = _context.Songs.Where(s => s.Id == id).SingleOrDefault();
+            if (mySong != null)
+            {
+                ++mySong.Likes;
+                _context.Update(mySong);
+                _context.SaveChanges();
+                return Ok(mySong);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
