@@ -69,17 +69,22 @@ namespace SongsWebAPI.Controllers
 
                 return Ok(mySong);
             }
-            else
-            {
-                return NotFound();
-            }
+            return NotFound();
         }
 
         // DELETE api/Songs/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Forbid();
+            var song = _context.Songs.Where(s => s.Id == id).SingleOrDefault();
+            if (song != null)
+            {
+                _context.Songs.Remove(song);
+                _context.SaveChanges();
+
+                return NoContent();
+            }
+            return NotFound();
         }
     }
 }
