@@ -69,7 +69,10 @@ namespace SongsWebAPI.Controllers
 
                 return Ok(mySong);
             }
-            return NotFound();
+            else
+            {
+                return NotFound();
+            }
         }
 
         // DELETE api/Songs/5
@@ -84,7 +87,10 @@ namespace SongsWebAPI.Controllers
 
                 return NoContent();
             }
-            return NotFound();
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }
