@@ -53,9 +53,26 @@ namespace SongsWebAPI.Controllers
 
         // PUT api/Songs/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] Song song)
         {
-            return Forbid();
+            var mySong = _context.Songs.Where(s => s.Id == id).SingleOrDefault();
+            if(mySong != null)
+            {
+                mySong.Title = song.Title;
+                mySong.Artist = song.Artist;
+                mySong.Album = song.Album;
+                mySong.ReleaseDate = song.ReleaseDate;
+                mySong.Genre = song.Genre;
+
+                _context.Songs.Update(mySong);
+                _context.SaveChanges();
+
+                return Ok(mySong);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // DELETE api/Songs/5

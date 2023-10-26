@@ -93,7 +93,7 @@ namespace SongsWebAPI.Data
                 new Song
                 {
                     Id = 9,
-                    Title = "Vagrant Song (Deep South",
+                    Title = "Vagrant Song (Deep South)",
                     Artist = "Ryan Ike",
                     Album = "Where the Water Tastes Like Wine OST",
                     ReleaseDate = new DateTime(2018, 2, 1),
