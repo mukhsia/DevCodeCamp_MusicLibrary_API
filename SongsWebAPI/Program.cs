@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using SongsWebAPI.Data;
+using SongsWebAPI.Extensions;
 
 namespace SongsWebAPI
 {
@@ -11,7 +12,7 @@ namespace SongsWebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.ConfigureCors();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -27,6 +28,8 @@ namespace SongsWebAPI
             .EnableDetailedErrors());
 
             var app = builder.Build();
+
+            app.UseCors("CorsPolicy");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
